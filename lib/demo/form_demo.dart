@@ -135,7 +135,6 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     // textEditingController.text = 'Hi';
     textEditingController.addListener(

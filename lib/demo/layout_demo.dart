@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sacco/sacco.dart';
-import 'package:hex/hex.dart';
 
 class LayoutDemo extends StatelessWidget {
   final networkInfo = NetworkInfo(name: '', bech32Hrp: 'cosmos', lcdUrl: 'http://172.168.0.78:1317');
