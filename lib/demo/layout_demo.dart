@@ -1,17 +1,85 @@
 import 'package:flutter/material.dart';
+import 'package:sacco/sacco.dart';
+import 'package:hex/hex.dart';
 
 class LayoutDemo extends StatelessWidget {
+  final networkInfo = NetworkInfo(name: '', bech32Hrp: 'cosmos', lcdUrl: 'http://172.168.0.78:1317');
+  final String mnemonicString =
+      'final random flame cinnamon grunt haz]ard easily mutual resist pond solution define knife female tongue crime atom jaguar alert library best forum lesson rigid';
+
   @override
   Widget build(BuildContext context) {
+    final mnemonic = mnemonicString.split(' ');
+
+    final wallet = Wallet.derive(mnemonic, networkInfo);
+
+    final message = StdMsg(
+      type: "cosmos-sdk/MsgSend",
+      value: {
+        "from_address": "cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9",
+        "to_address": "cosmos18rwfv9yj7u4zmahv4y299ft086j704cxal9mtf",
+        "amount": [
+          {"denom": "zcoin", "amount": "1"}
+        ]
+      },
+    );
+
+    final stdTx = TxBuilder.buildStdTx(stdMsgs: [message], memo: '');
+
+    print(wallet.bech32Address);
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           AspectRatio(
-            aspectRatio: 1.0/1.0,
+            aspectRatio: 1.0 / 1.0,
             child: Container(
-              color: Colors.lightBlue,
-            ),
+                color: Colors.lightBlue,
+                child: Column(
+                  
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      wallet.bech32Address,
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                    
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Text('${wallet.ecPrivateKey}'),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Text('${wallet.ecPublicKey}'),
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(12.0),
+                      width: double.infinity,
+                      child: RaisedButton(
+                      child: Text('交易'),
+                      color: Colors.pinkAccent,
+                      onPressed: () async {
+                        final signedStdTx = await TxSigner.signStdTx(
+                            wallet: wallet, stdTx: stdTx);
+                        final result = await TxSender.broadcastStdTx(
+                          wallet: wallet,
+                          stdTx: signedStdTx,
+                        );
+
+                        // Check the result
+                        if (result.success) {
+                          print("Tx send successfully. Hash: ${result.hash}");
+                        } else {
+                          print("Tx send error: ${result.error.errorMessage}");
+                        }
+                      },
+                    ),
+                    )
+                  ],
+                )),
           )
         ],
       ),

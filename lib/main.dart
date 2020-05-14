@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sacco/sacco.dart';
+import 'package:start_with_flutter/demo/form_demo.dart';
+import 'package:start_with_flutter/demo/wallet.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/bottom_navigation_demo.dart';
 import 'demo/listview_demo.dart';
@@ -7,22 +10,34 @@ import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
+import 'demo/form_demo.dart';
 
 void main() => runApp(App());
 
 class App extends StatelessWidget {
+//   Wallet data;
+// setData() async {
+//   data = await getWallet();    //getData()延迟执行后赋值给data
+// }
+
+
+
   @override
   Widget build(BuildContext context) {
+
+    // print(data.bech32Address);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
       // initialRoute: '/',
       // routes: {
       //   '/': (context) => NavigatorDemo(),
-      //   '/about': (context) => Page(title: 'About',)
+      //   '/about': (context) => Page(title: 'About',),
+      //   '/form': (context) => FormDemo()
       // },
       theme: ThemeData(
-        primarySwatch: Colors.yellow
+        primarySwatch: Colors.yellow,
+        accentColor: Colors.lightBlue
       ),
     );
   }

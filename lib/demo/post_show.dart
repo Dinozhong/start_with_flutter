@@ -22,7 +22,10 @@ class PostShow extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.all(32.0),
+<<<<<<< HEAD
             width: double.infinity,
+=======
+>>>>>>> fdce801aea2006d5247b2b8106c3503f5c5ed483
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
