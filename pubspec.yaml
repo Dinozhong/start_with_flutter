@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   sacco: ^0.0.8
   shared_preferences: ^0.5.3+4
+  dio: ^3.0.3
 
 dev_dependencies:
   flutter_test:
