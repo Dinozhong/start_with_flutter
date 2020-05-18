@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sacco/sacco.dart';
-import 'package:start_with_flutter/demo/form_demo.dart';
-import 'package:start_with_flutter/demo/wallet.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/bottom_navigation_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
+import 'demo/pageOne.dart';
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
@@ -93,7 +91,7 @@ class Home extends StatelessWidget {
           children: <Widget>[
             ListViewDemo(),
             // Icon(Icons.change_history, size: 128.0, color: Colors.black12),
-            BasicDemo(),
+            GameDetailPage(),
             LayoutDemo(),
             SliverDemo()
           ],
