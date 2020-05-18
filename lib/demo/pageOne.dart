@@ -10,6 +10,15 @@ class GameDetailPage extends StatefulWidget {
 class _GameDetailPageState extends State<GameDetailPage> {
   @override
   Widget build(BuildContext context) {
+    List arr = [1, 3, 5, 2, 7, 9, 10];
+    for (var i = 0; i < arr.length; i++) {
+      if (arr.length % 2 == 0) {
+        print(arr.take(2));
+      }else {
+        print(arr.take(1));
+      }
+      arr.removeRange(0, 2);
+    }
     return Container(
       color: Colors.redAccent,
       child: SingleChildScrollView(
@@ -380,30 +389,67 @@ class _GameDetailPageState extends State<GameDetailPage> {
   }
 
   Widget jibenMian() {
+    final width = (MediaQuery.of(context).size.width - 20 - 80)/2;
     return Container(
       color: Colors.white,
       margin: const EdgeInsets.all(10.0),
       child: Column(
-        children: [
-          Container(child: Text('基本面数据分析'),),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(child: Container(child: Align(child: Text('主队：拉赫蒂', style: TextStyle(color: Colors.white),),),color: Colors.redAccent, height: 40,),flex: 2,),
-              Expanded(child: Container(),flex: 1,),
-              Expanded(child: Container(child: Align(child:Text('客队：洪卡', style: TextStyle(color: Colors.white),)),color: Colors.orangeAccent, height: 40,),flex: 2,),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(child: Container(child: Container(child: Text('1.98'), color: Colors.redAccent, width: 20,), height: 20,),flex: 1,),
-              Expanded(child: Container(child: Text('名气排行'),),flex: 1,),
-              Expanded(child: Container(child: Container(child: Text('1.98'),), height: 20,),flex: 2,),
-            ],
-          )
-        ],
+        children: _buildItem()
       ),
     );
+  }
+
+  _buildItem() {
+    final width = (MediaQuery.of(context).size.width - 20 - 80)/2;
+    List<Widget> rowList = [
+      Container(child: Text('基本面数据分析'),),
+          Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(width: width, child: Align(child: Text('主队：拉赫蒂', style: TextStyle(color: Colors.white),),),color: Colors.redAccent, height: 40,),
+              Container(width: 80,),
+              Container(width: width, child: Align(child:Text('客队：洪卡', style: TextStyle(color: Colors.white),)),color: Colors.orangeAccent, height: 40,)
+            ],
+          ),
+          SizedBox(height: 10,)
+    ];
+    List titles = ['名气排名', '历史对战', '近期状态', '主客状态', '整体拉力', '表象拉力', '整体缓冲', '局部缓冲'];
+    for (var i = 0; i < titles.length; i++) {
+
+      Widget row = 
+        Row(
+            children: [
+              Container(
+                height: 20,
+                width: width,
+                color: Colors.grey[50],
+                alignment: Alignment.centerRight,
+                child: Container(
+                  child: Text('2'), 
+                  color: Colors.redAccent, 
+                  width: 40, 
+                  alignment: Alignment.centerRight,
+                )
+              ),
+              Container(child: Text('${titles[i]}', textAlign: TextAlign.center,),  width: 80,),
+              Container(
+                height: 20,
+                width: width,
+                color: Colors.grey[50],
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text('11'), 
+                  color: Colors.orangeAccent,
+                  width: 40,
+                ),
+              ),
+            ],
+          );
+      
+      rowList.add(row);
+      rowList.add(SizedBox(height: 10,));
+    }
+return rowList;
   }
 }
