@@ -10,446 +10,243 @@ class GameDetailPage extends StatefulWidget {
 class _GameDetailPageState extends State<GameDetailPage> {
   @override
   Widget build(BuildContext context) {
-    List arr = [1, 3, 5, 2, 7, 9, 10];
-    for (var i = 0; i < arr.length; i++) {
-      if (arr.length % 2 == 0) {
-        print(arr.take(2));
-      }else {
-        print(arr.take(1));
-      }
-      arr.removeRange(0, 2);
-    }
     return Container(
-      color: Colors.redAccent,
-      child: SingleChildScrollView(
-        child: Column(
-        children: [
-          pageOne(),
-          heliPanKou(),
-          yuceGaiLv(),
-          fenxiGuandian(),
-          tuijianPage(),
-          jibenMian()
-        ],
-      ),
-      )
-    );
-  }
-
-  Widget pageOne() {
-    final cellWidth = (MediaQuery.of(context).size.width - 10) / 4;
-    return Container(
-      color: Colors.white,
-      margin: const EdgeInsets.all(10),
-      child: Column(
-        children: [
-          Container(
-            child: Text(
-              '数据更新时间：2020-05-05',
-              style: TextStyle(fontSize: 13.0),
-            ),
-          ),
-          Container(
-            child: Table(
-              border: TableBorder.all(width: 1.0, color: Colors.grey),
-              children: [
-                TableRow(children: [
-                  Center(
-                    child: Text('公司'),
-                  ),
-                  Center(
-                    child: Text('意图指数'),
-                  ),
-                  Center(
-                    child: Text('自然指数'),
-                  ),
-                  Center(
-                    child: Text('高峰期指数'),
-                  ),
-                ]),
-                TableRow(children: [
-                  TableCell(child: Center(child: Text('金宝博'),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  SizedBox(
-                    height: 40, 
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          color: Colors.redAccent,
-                          width: cellWidth,
-                          height: 20,
-                        ),
-                        Text('60')
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40, 
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          color: Colors.orangeAccent,
-                          width: cellWidth/2,
-                          height: 20,
-                        ),
-                        Text('100')
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40, 
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          color: Colors.yellow,
-                          width: cellWidth,
-                          height: 20,
-                        ),
-                        Text('80')
-                      ],
-                    ),
-                  ),
-                ]),
-                TableRow(children: [
-                  TableCell(child: Center(child: Text('澳门'),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  SizedBox(
-                    height: 40, 
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          color: Colors.redAccent,
-                          width: cellWidth,
-                          height: 20,
-                        ),
-                        Text('60')
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40, 
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          color: Colors.orangeAccent,
-                          width: cellWidth/2,
-                          height: 20,
-                        ),
-                        Text('100')
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40, 
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          color: Colors.yellow,
-                          width: cellWidth,
-                          height: 20,
-                        ),
-                        Text('80')
-                      ],
-                    ),
-                  ),
-                ]),
-              ],
-            ),
-          ),
-          Container(
-            child: Text('温馨提示：以上指数是反映上盘的受注情况', style: TextStyle(fontSize: 12.0, color: Colors.redAccent),),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget heliPanKou() {
-    return Container(
-      color: Colors.white,
-      margin: const EdgeInsets.all(10),
-      child: Column(
-        children: [
-          Container(child: Text('评估合理盘口可参考的信息'),),
-          Container(child: Text('主客队历史对战'),),
-          Container(
-            child: Table(
-              border: TableBorder.all(width: 1.0, color: Colors.grey),
-              children: [
-                TableRow(children: [
-                  Center(
-                    child: Text('比赛日期和名称', style: TextStyle(fontSize: 10.0),),
-                  ),
-                  Center(
-                    child: Text('初盘盘口和水位', style: TextStyle(fontSize: 10.0),),
-                  ),
-                  Center(
-                    child: Text('风险盘口和水位', style: TextStyle(fontSize: 10.0),),
-                  ),
-                  Center(
-                    child: Text('赛果', style: TextStyle(fontSize: 10.0),),
-                  ),
-                ]),
-                TableRow(children: [
-                  SizedBox(
-                    height: 40, 
-                    child: TableCell(child: Center(child: Text('[2020-09-01\n水晶宫-爱华顿]', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  ),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('0-0', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                ]),
-                TableRow(children: [
-                  SizedBox(
-                    height: 40, 
-                    child: TableCell(child: Center(child: Text('[2020-09-01\n水晶宫-爱华顿]', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  ),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('0-0', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                ]),
-              ],
-            ),
-            ),
-            Container(
-              child: Text('主客队积分相当球队的历史比赛'),
-            ),
-            Container(
-              child: Text('(主队实力相当球队和客队对战记录)'),
-            ),
-            Container(
-            child: Table(
-              border: TableBorder.all(width: 1.0, color: Colors.grey),
-              children: [
-                TableRow(children: [
-                  Center(
-                    child: Text('比赛日期和名称', style: TextStyle(fontSize: 10.0),),
-                  ),
-                  Center(
-                    child: Text('初盘盘口和水位', style: TextStyle(fontSize: 10.0),),
-                  ),
-                  Center(
-                    child: Text('风险盘口和水位', style: TextStyle(fontSize: 10.0),),
-                  ),
-                  Center(
-                    child: Text('赛果', style: TextStyle(fontSize: 10.0),),
-                  ),
-                ]),
-                TableRow(children: [
-                  SizedBox(
-                    height: 40, 
-                    child: TableCell(child: Center(child: Text('[2020-09-01\n水晶宫-爱华顿]', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  ),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('0-0', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                ]),
-                TableRow(children: [
-                  SizedBox(
-                    height: 40, 
-                    child: TableCell(child: Center(child: Text('[2020-09-01\n水晶宫-爱华顿]', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  ),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('0-0', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                ]),
-              ],
-            ),
-            ),
-            Container(
-              child: Text('(客队实力相当球队和主队对战记录)'),
-            ),
-            Container(
-            child: Table(
-              border: TableBorder.all(width: 1.0, color: Colors.grey),
-              children: [
-                TableRow(children: [
-                  Center(
-                    child: Text('比赛日期和名称', style: TextStyle(fontSize: 10.0),),
-                  ),
-                  Center(
-                    child: Text('初盘盘口和水位', style: TextStyle(fontSize: 10.0),),
-                  ),
-                  Center(
-                    child: Text('风险盘口和水位', style: TextStyle(fontSize: 10.0),),
-                  ),
-                  Center(
-                    child: Text('赛果', style: TextStyle(fontSize: 10.0),),
-                  ),
-                ]),
-                TableRow(children: [
-                  SizedBox(
-                    height: 40, 
-                    child: TableCell(child: Center(child: Text('[2020-09-01\n水晶宫-爱华顿]', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  ),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('0-0', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                ]),
-                TableRow(children: [
-                  SizedBox(
-                    height: 40, 
-                    child: TableCell(child: Center(child: Text('[2020-09-01\n水晶宫-爱华顿]', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  ),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('1.06 平半 0.87', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                  TableCell(child: Center(child: Text('0-0', style: TextStyle(fontSize: 10.0),),), verticalAlignment: TableCellVerticalAlignment.middle,),
-                ]),
-              ],
-            ),
-            ),
-            Container(
-            child: Text('温馨提示：球队实力是不断变化的，合理盘口需要谨慎评估', style: TextStyle(fontSize: 12.0, color: Colors.redAccent),),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget yuceGaiLv() {
-    return Container(
-      color: Colors.white,
-      margin: const EdgeInsets.all(10),
-      child: Column(
-        children: [
-          Container(child: Text('亚盘预测概率'),),
-          Container(child: Text('盘口：半一'),),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    height: 15.0,
-                    color: Colors.redAccent,
-                    child: Text('56%', style: TextStyle(fontSize: 10.0, color: Colors.white),),
-                  )
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    height: 15.0,
-                    color: Colors.yellow,
-                    child: Text('44%', style: TextStyle(fontSize: 10.0, color: Colors.white),),
-                  )
-                ),
-              ],
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('慢切丝特称'),
-                Text('西汉姆联')
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget fenxiGuandian() {
-    return Container(
-      color: Colors.white,
-      margin: const EdgeInsets.all(10),
-      child: Column(
-        children: [
-          Container(child: Text('球天机指数分析观点(仅供参考)'),),
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(
-            'sdkfh ajdhf 及时的回复就会及时的回复可视电话风景时刻记得反馈还是快点好时刻的回复时间的回复圣诞节发上岛咖啡和是绝代风华圣诞节发黑色的回复说的废话说的废话'
-          ),)
-        ],
-      ),
-    );
-  }
-
-  Widget tuijianPage() {
-    final width = MediaQuery.of(context).size.width;
-    return Container(
-      color: Colors.white,
-      width: width - 20,
-      child: Column(
-        children: [
-          Container(child: Text('推荐'),),
-          Container(child: Text('拉赫蒂受让半一', style: TextStyle(fontSize: 16.0, color: Colors.redAccent),),) 
-        ],
-      ),
-    );
-  }
-
-  Widget jibenMian() {
-    final width = (MediaQuery.of(context).size.width - 20 - 80)/2;
-    return Container(
-      color: Colors.white,
-      margin: const EdgeInsets.all(10.0),
-      child: Column(
-        children: _buildItem()
-      ),
-    );
-  }
-
-  _buildItem() {
-    final width = (MediaQuery.of(context).size.width - 20 - 80)/2;
-    List<Widget> rowList = [
-      Container(child: Text('基本面数据分析'),),
-          Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        color: Colors.redAccent,
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              Container(width: width, child: Align(child: Text('主队：拉赫蒂', style: TextStyle(color: Colors.white),),),color: Colors.redAccent, height: 40,),
-              Container(width: 80,),
-              Container(width: width, child: Align(child:Text('客队：洪卡', style: TextStyle(color: Colors.white),)),color: Colors.orangeAccent, height: 40,)
+              riskPage()
             ],
           ),
-          SizedBox(height: 10,)
+        ));
+  }
+
+  Widget riskPage() {
+    final rowWidth = (MediaQuery.of(context).size.width-20-70)/2;
+    return Container(
+      color: Colors.white,
+      margin: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Container(
+            child: Table(
+              columnWidths: {
+                0: FixedColumnWidth(70),
+                1: FixedColumnWidth(rowWidth),
+                2: FixedColumnWidth(rowWidth)
+              },
+              border: TableBorder.all(width: 1.0, color: Colors.grey[100]),
+              children: _buildTableRow()
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _buildTableRow() {
+    List testData = [
+      {
+        "companyName": "韦德",
+        "risk": [
+          {"duration": 0, "cap": "球半", "avLevel": 0, "avLevel2": 0},
+          {"duration": 2916420, "cap": "一球", "avLevel": 105, "avLevel2": 78},
+          {"duration": 383100, "cap": "半球/一球", "avLevel": 79, "avLevel2": 104},
+          {"duration": 19080, "cap": "半球", "avLevel": 90, "avLevel2": 95}
+        ]
+      },
+      {
+        "companyName": "CROWN",
+        "risk": [
+          {"duration": 1, "cap": "球半", "avLevel": 21, "avLevel2": 22},
+          {"duration": 3916420, "cap": "一球", "avLevel": 100, "avLevel2": 789},
+          {"duration": 483100, "cap": "半球/一球", "avLevel": 792, "avLevel2": 4},
+          {"duration": 59080, "cap": "半球", "avLevel": 920, "avLevel2": 915}
+        ]
+      },
+      // {
+      //   "companyName": "BET365",
+      //   "risk": [
+      //     {"duration": 0, "cap": "球半", "avLevel": 0, "avLevel2": 0},
+      //     {"duration": 2916420, "cap": "一球", "avLevel": 105, "avLevel2": 78},
+      //     {"duration": 383100, "cap": "半球/一球", "avLevel": 79, "avLevel2": 104},
+      //     {"duration": 19080, "cap": "半球", "avLevel": 90, "avLevel2": 95}
+      //   ]
+      // }
     ];
-    List titles = ['名气排名', '历史对战', '近期状态', '主客状态', '整体拉力', '表象拉力', '整体缓冲', '局部缓冲'];
-    for (var i = 0; i < titles.length; i++) {
+    List<TableRow> rowList = <TableRow>[];
+    Map lastMap = {};
+if (testData.length % 2 != 0) {
+  lastMap = testData.last;
+  testData.removeLast();
+}
+if (testData.length > 1) {
+      for (var i = 0; i < testData.length/2; i++) {
+      print(testData[i+i]['companyName']);
+      print(testData[i+i+1]['companyName']);
+      TableRow company =  TableRow(children: [
+                  Container(
+                    height: 40,
+                    color: Colors.redAccent,
+                    child: Center(
+                        child: Text(
+                          '公司',
+                          style: TextStyle(fontSize: 10.0),
+                        ),
+                      ),
+                    ),
+                 Container(
+                   height: 40,
+                   child: Center(
+                      child: Text(
+                        testData[i+i]['companyName'],
+                        style: TextStyle(fontSize: 10.0),
+                      ),
+                    ),
+                 ),
+                 Container(
+                   height: 40,
+                  child: Center(
+                      child: Text(
+                        testData[i+i+1]['companyName'],
+                        style: TextStyle(fontSize: 10.0),
+                      ),
+                    ),
+                 ) 
+                ]);
+          rowList.add(company);
+          int leftLength = testData[i+i]['risk'].length;
+          int rightLength = testData[i+i+1]['risk'].length;
+          int count = leftLength > rightLength ? leftLength : rightLength;
+      for (var j = 0; j < count; j++) {
+        Map leftMap = {};
+        Map rightMap = {}; 
+        if (testData[i+i]['risk'].length - 1 >= j) {
+          print(testData[i+i]['risk'][j]);
+        }else {
+          testData[i+i+1]['risk'].add({"":""});
+        }
+        leftMap = testData[i+i]['risk'][j];
 
-      Widget row = 
-        Row(
-            children: [
-              Container(
-                height: 20,
-                width: width,
-                color: Colors.grey[50],
-                alignment: Alignment.centerRight,
-                child: Container(
-                  child: Text('2'), 
-                  color: Colors.redAccent, 
-                  width: 40, 
-                  alignment: Alignment.centerRight,
-                )
-              ),
-              Container(child: Text('${titles[i]}', textAlign: TextAlign.center,),  width: 80,),
-              Container(
-                height: 20,
-                width: width,
-                color: Colors.grey[50],
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text('11'), 
-                  color: Colors.orangeAccent,
-                  width: 40,
-                ),
-              ),
-            ],
-          );
-      
-      rowList.add(row);
-      rowList.add(SizedBox(height: 10,));
+        if (testData[i+i+1]['risk'].length - 1 >= j) {
+          print(testData[i+i+1]['risk'][j]);
+        }else {
+          testData[i+i+1]['risk'].add({"":""});
+        }
+        rightMap = testData[i+i+1]['risk'][j];
+        print('+++++');
+        print(rightMap.isEmpty);
+        print(rightMap.length);
+        TableRow risks =  TableRow(children: [
+                  SizedBox(
+                    height: 40,
+                    child: Center(
+                        child: Text(
+                          j == 0 ? '初盘' : '风险$j',
+                          style: TextStyle(fontSize: 10.0),
+                        ),
+                      ),
+                    ),
+                 Container(
+                   height: 40,
+                   child: Center(
+                      child: Text(
+                        leftMap.length == 1 ?
+                        '' : '【${leftMap['duration']}分钟】\n${leftMap['avLevel']}${leftMap['cap']}${leftMap['avLevel2']}',
+                        style: TextStyle(fontSize: 10.0),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                 ),
+                 Container(
+                   height: 40,
+                  child: Center(
+                      child: Text(
+                        rightMap.length == 1 ?
+                        '' : '【${rightMap['duration']}分钟】\n${rightMap['avLevel']}${rightMap['cap']}${rightMap['avLevel2']}',
+                        style: TextStyle(fontSize: 10.0),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                 ) 
+                ]);
+          rowList.add(risks);
+      }
     }
-return rowList;
+}
+
+    print(lastMap.isEmpty);
+    print(lastMap['risk']);
+    if (lastMap.isNotEmpty) {
+      TableRow lastCompany =  TableRow(children: [
+                  SizedBox(
+                    height: 40,
+                    child: Center(
+                        child: Text(
+                          '公司',
+                          style: TextStyle(fontSize: 10.0),
+                        ),
+                      ),
+                    ),
+                 Container(
+                   height: 40,
+                   child: Center(
+                      child: Text(
+                        lastMap['companyName'],
+                        style: TextStyle(fontSize: 10.0),
+                      ),
+                    ),
+                 ),
+                 Container(
+                   height: 40,
+                  child: Center(
+                      child: Text(
+                        '',
+                        style: TextStyle(fontSize: 10.0),
+                      ),
+                    ),
+                 ) 
+                ]);
+          rowList.add(lastCompany);
+    for (var k = 0; k < lastMap['risk'].length; k++) {
+      Map data = lastMap['risk'][k];
+      TableRow risks =  TableRow(children: [
+                  SizedBox(
+                    height: 40,
+                    child: Center(
+                        child: Text(
+                          k == 0 ? '初盘' : '风险$k',
+                          style: TextStyle(fontSize: 10.0),
+                        ),
+                      ),
+                    ),
+                 Container(
+                   height: 40,
+                   child: Center(
+                      child: Text(
+                        lastMap.length == 1 ?
+                        '' : '【${data['duration']}分钟】\n${data['avLevel']}${data['cap']}${data['avLevel2']}',
+                        style: TextStyle(fontSize: 10.0),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                 ),
+                 Container(
+                   height: 40,
+                  child: Center(
+                      child: Text(
+                        '',
+                        style: TextStyle(fontSize: 10.0),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                 ) 
+                ]);
+          rowList.add(risks);
+    }
+    
+    }
+    
+    return rowList;
   }
 }
