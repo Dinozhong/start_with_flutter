@@ -9,21 +9,14 @@ import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
+import 'package:dio/dio.dart';
 
 void main() => runApp(App());
 
 class App extends StatelessWidget {
-//   Wallet data;
-// setData() async {
-//   data = await getWallet();    //getData()延迟执行后赋值给data
-// }
-
-
-
   @override
   Widget build(BuildContext context) {
-
-    // print(data.bech32Address);
+    getHttp();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
@@ -38,6 +31,28 @@ class App extends StatelessWidget {
         accentColor: Colors.lightBlue
       ),
     );
+  }
+}
+
+// void getHttp()async{
+//     try{
+//       Response response;
+//       var data={'name':'技术胖'};
+//       response = await Dio().get(
+//         "https://www.easy-mock.com/mock/5c60131a4bed3a6342711498/baixing/dabaojian?name=大胸美女",
+//         //  queryParameters:data
+//       );
+//       return print(response);
+//     }catch(e){
+//       return print(e);
+//     }
+//   }
+void getHttp() async {
+  try {
+    Response response = await Dio().get("http://www.baidu.com");
+    print(response);
+  } catch (e) {
+    print(e);
   }
 }
 

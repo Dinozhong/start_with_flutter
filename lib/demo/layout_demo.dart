@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sacco/sacco.dart';
+<<<<<<< HEAD
+import 'package:hex/hex.dart';
+import 'wallet.dart';
+=======
+>>>>>>> e71602d3626adb2ee4c855075d8d5976f0908ba0
 
 class LayoutDemo extends StatelessWidget {
   final networkInfo = NetworkInfo(name: '', bech32Hrp: 'cosmos', lcdUrl: 'http://172.168.0.78:1317');
@@ -24,7 +29,7 @@ class LayoutDemo extends StatelessWidget {
     );
 
     final stdTx = TxBuilder.buildStdTx(stdMsgs: [message], memo: '');
-
+    // final a = getWallet();
     print(wallet.bech32Address);
     return Container(
       child: Column(

@@ -4,12 +4,20 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
+<<<<<<< HEAD
+  - Flutter (from `.symlinks/flutter/ios`)
+=======
   - Flutter (from `Flutter`)
+>>>>>>> e71602d3626adb2ee4c855075d8d5976f0908ba0
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
+<<<<<<< HEAD
+    :path: ".symlinks/flutter/ios"
+=======
     :path: Flutter
+>>>>>>> e71602d3626adb2ee4c855075d8d5976f0908ba0
   shared_preferences:
     :path: ".symlinks/plugins/shared_preferences/ios"
 
@@ -17,6 +25,12 @@ SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
 
+<<<<<<< HEAD
+PODFILE CHECKSUM: 10ae9c18d12c9ffc2275c9a159a3b1e281990db0
+
+COCOAPODS: 1.6.1
+=======
 PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
 
 COCOAPODS: 1.8.4
+>>>>>>> e71602d3626adb2ee4c855075d8d5976f0908ba0
